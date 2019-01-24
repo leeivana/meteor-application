@@ -52,6 +52,7 @@ class LoginForm extends Component {
                 <button className="btn btn-block btn-primary" type="submit" value="Login"><i className="si si-login pull-right"></i> Log in</button>
             </div>
         </div>
+        <p>If you don't have an account, Register <a href="/register">here</a></p>
     </form>
     )
   }
