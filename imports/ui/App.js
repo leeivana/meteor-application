@@ -14,7 +14,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div>
+      <div style={{backgroundColor: '#f3f1ef'}}>
         { this.state.loggedIn ?
         <div>You're Already Logged In!</div>
         :
