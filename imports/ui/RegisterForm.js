@@ -65,7 +65,7 @@ class RegisterForm extends Component {
             <button className="btn btn-block btn-success" type="submit"><i className="fa fa-plus pull-right" /> Sign Up</button>
           </div>
         </div>
-        <p>Already have an account? Sign in here</p>
+        <p>Already have an account? Log in <a href="/">here</a></p>
       </form>
     )
   }
