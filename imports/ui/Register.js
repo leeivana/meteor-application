@@ -1,11 +1,17 @@
 import React, { Component } from 'react'; 
+import { Meteor } from 'meteor/meteor';
 
 class Register extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
-    const email = event.target.registerEmail.value;
-    const password = event.target.registerPassword.value;
-    console.log('Form submitted');
+    const emailVar = event.target.registerEmail.value;
+    const passwordVar = event.target.registerPassword.value;
+    Accounts.createUser({
+      email: emailVar,
+      password: passwordVar
+    });
+    console.log('user', Meteor.user());
+
   }
   render(){
     return (
