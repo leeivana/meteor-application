@@ -9,10 +9,10 @@ class LoginForm extends Component {
   }
   handleSubmit = (event) => {
     event.preventDefault();
-    const emailVar = event.target.loginEmail.value;
-    const passwordVar = event.target.loginPassword.value;
-    Meteor.loginWithPassword(emailVar, passwordVar, function(error){
-      console.log(error);
+    const username = event.target.loginUsername.value;
+    const password = event.target.loginPassword.value;
+    Meteor.loginWithPassword(username, password, error => {
+      console.error(error);
     });
     if(Meteor.user()){
       this.setState({
@@ -27,8 +27,8 @@ class LoginForm extends Component {
         <div className="form-group">
             <div className="col-xs-12">
                 <div className="form-material form-material-primary floating">
-                    <input className="form-control" type="email" name="loginEmail" />
-                    <label for="login-username">Username</label>
+                    <input className="form-control" type="text" name="loginUsername" />
+                    <label htmlFor="login-username">Username</label>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@ class LoginForm extends Component {
             <div className="col-xs-12">
                 <div className="form-material form-material-primary floating">
                     <input className="form-control" type="password" name="loginPassword" />
-                    <label for="login-password">Password</label>
+                    <label htmlFor="login-password">Password</label>
                 </div>
             </div>
         </div>
