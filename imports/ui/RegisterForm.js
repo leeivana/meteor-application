@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
-
+import { Accounts } from 'meteor/accounts-base';
+import { Meteor } from 'meteor/meteor'; 
 class RegisterForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
@@ -8,8 +9,11 @@ class RegisterForm extends Component {
     const password = event.target.registerPassword.value;
     const password2 = event.target.registerPassword2.value;
     Accounts.createUser({
-      email: email,
-      password: password
+      username, 
+      email,
+      password,
+    }, error => {
+      console.log(error.reason);
     });
     console.log('user', Meteor.user());
 
