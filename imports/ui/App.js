@@ -10,7 +10,7 @@ export default class App extends Component {
       <div>
         APP MAIN
         { this.props.currentUser ?
-        <div>LOGGED IN ALREADY</div>
+        <div>You're Already Logged In!</div>
         :
         <div>
           <Login />
