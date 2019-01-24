@@ -1,12 +1,13 @@
 import React, { Component } from 'react'; 
-
+import { Accounts } from 'meteor/accounts-base';
+import { Meteor } from 'meteor/meteor';
 class LoginForm extends Component {
   constructor(){
     super();
     this.state = {
-      loggedIn: false, 
+        loggedIn: false, 
     }
-  }
+    }
   handleSubmit = (event) => {
     event.preventDefault();
     const username = event.target.loginUsername.value;
@@ -52,9 +53,10 @@ class LoginForm extends Component {
                 <button className="btn btn-block btn-primary" type="submit" value="Login"><i className="si si-login pull-right"></i> Log in</button>
             </div>
         </div>
+        <p>Don't have an account? Register here</p>
     </form>
     )
-  }
+    }
 }
 
 export default LoginForm; 
