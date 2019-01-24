@@ -1,79 +1,40 @@
 import React, { Component } from 'react'; 
 import { Meteor } from 'meteor/meteor';
-import './assets/css/oneui.css';
-import './assets/css/bootstrap.min.css';
 
-class Login extends Component {
-  constructor(){
-    super();
-    this.state = {
-      loggedIn: false, 
-    }
-  }
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const emailVar = event.target.loginEmail.value;
-    const passwordVar = event.target.loginPassword.value;
-    Meteor.loginWithPassword(emailVar, passwordVar, function(error){
-      console.log(error);
-    });
-    if(Meteor.user()){
-      this.setState({
-        loggedIn: true, 
-      })
-    }
-    console.log('user', Meteor.user());
-  }
-  render(){
+import LoginForm from './LoginForm';
+
+const Login = () => {
     return (
-      // <div>
-
       // <form onSubmit={this.handleSubmit}>
       //   <input type="email" name="loginEmail" />
       //   <input type="password" name="loginPassword" />
       //   <input type="submit" value="Login" />
       // </form>
-
-
-    <div className="block-content block-content-full block-content-narrow"> 
-      <h1 className="h2 font-w600 push-30-t push-5">OneUI</h1>
-      <p>Welcome, please login.</p>
-        <form className="js-validation-login form-horizontal push-30-t push-50" >
-            <div className="form-group">
-                <div className="col-xs-12">
-                    <div className="form-material form-material-primary floating">
-                        <input className="form-control" type="email" name="loginEmail" />
-                        <label for="login-username">Username</label>
+      <div className="content overflow-hidden">
+      <div className="row">
+          <div className="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+              <div className="block block-themed animated fadeIn">
+                  <div className="block-header bg-primary">
+                      <ul className="block-options">
+                          <li>
+                              <a href="base_pages_reminder.html">Forgot Password?</a>
+                          </li>
+                          <li>
+                              <a href="base_pages_register.html" data-toggle="tooltip" data-placement="left" title="New Account"><i className="si si-plus"></i></a>
+                          </li>
+                      </ul>
+                      <h3 className="block-title">Login</h3>
+                  </div>
+                      <div className="block-content block-content-full block-content-narrow"> 
+                        <h1 className="h2 font-w600 push-30-t push-5">OneUI</h1>
+                        <p>Welcome, please login.</p>
+                        <LoginForm />
+                      </div>
+                      </div>
                     </div>
                 </div>
             </div>
-            <div className="form-group">
-                <div className="col-xs-12">
-                    <div className="form-material form-material-primary floating">
-                        <input className="form-control" type="password" name="loginPassword" />
-                        <label for="login-password">Password</label>
-                    </div>
-                </div>
-            </div>
-            <div className="form-group">
-                <div className="col-xs-12">
-                    <label className="css-input switch switch-sm switch-primary">
-                        <input type="checkbox" id="login-remember-me" name="login-remember-me" /><span></span> Remember Me?
-                    </label>
-                </div>
-            </div>
-            <div className="form-group">
-                <div className="col-xs-12 col-sm-6 col-md-4">
-                    <button className="btn btn-block btn-primary" type="submit" value="Login"><i className="si si-login pull-right"></i> Log in</button>
-                </div>
-            </div>
-        </form>
-    </div>
-      // </div>
-
-      
     )
-  }
 }
 
 export default Login; 

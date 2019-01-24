@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import Login from './Login';
 import Register from './Register';
-
-import { withTracker } from 'meteor/react-meteor-data';
+import './assets/css/oneui.css';
+import './assets/css/bootstrap.min.css';
+// import './assets/img';
 
 export default class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      loggedIn: this.props.currentUser,
+    }
+  }
   render() {
     return (
       <div>
-        APP MAIN
-        { this.props.currentUser ?
+        { this.state.loggedIn ?
         <div>You're Already Logged In!</div>
         :
         <div>
