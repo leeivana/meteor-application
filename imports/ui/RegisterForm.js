@@ -3,6 +3,12 @@ import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor'; 
 import { FlowRouter } from 'meteor/kadira:flow-router';
 class RegisterForm extends Component {
+  constructor(){
+    super();
+    this.state = {
+      errorMessage: '',
+    }
+  }
   handleSubmit = (event) => {
     event.preventDefault();
     const username = event.target.registerUsername.value;
@@ -16,7 +22,11 @@ class RegisterForm extends Component {
     }, error => {
       if(!error) {
         FlowRouter.go('Dashboard');
-      };
+      } 
+      console.log(Meteor.userId());
+      console.log(Meteor.user());
+      console.log('reason', error.reason);
+      this.setState({errorMessage: error.reason})
     });
   }
   render(){
@@ -62,6 +72,7 @@ class RegisterForm extends Component {
           </div>
         </div>
         <div className="form-group">
+          <p>{this.state.errorMessage}</p>
           <div className="col-xs-12 col-sm-6 col-md-5">
             <button className="btn btn-block btn-success" type="submit"><i className="fa fa-plus pull-right" /> Sign Up</button>
           </div>

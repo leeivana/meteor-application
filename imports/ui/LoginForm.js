@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor';
 class LoginForm extends Component {
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const username = event.target.loginUsername.value;
-    const password = event.target.loginPassword.value;
-    Meteor.loginWithPassword(username, password, error => {
-         console.error(error);
-    });
-    console.log('user', Meteor.user());
-  }
-  render(){
+    handleSubmit = (event) => {
+        event.preventDefault();
+        const username = event.target.loginUsername.value;
+        const password = event.target.loginPassword.value;
+        Meteor.loginWithPassword(username, password, error => {
+            console.error(error);
+        });
+        console.log('user', Meteor.user());
+    }
+    render(){
     return(
-      <form className="js-validation-login form-horizontal push-30-t push-50" onSubmit={this.handleSubmit}>
+    <form className="js-validation-login form-horizontal push-30-t push-50" onSubmit={this.handleSubmit}>
         <div className="form-group">
             <div className="col-xs-12">
                 <div className="form-material form-material-primary floating">
