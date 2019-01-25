@@ -40,52 +40,59 @@ class RegisterForm extends Component {
   render(){
     return(
       <form className="js-validation-register form-horizontal push-50-t push-50" onSubmit={this.handleSubmit}>
-        <div className="form-group">
-          <div className="col-xs-12">
-            <div className="form-material form-material-success">
-              <input className="form-control" type="text" name="registerUsername" placeholder="Please enter a username" />
-              <label htmlFor="register-username">Username</label>
-            </div>
+      <div className="form-group">
+        <div className="col-xs-12">
+          <div className="form-material form-material-success">
+            <input className="form-control" type="text" name="registerUsername" placeholder="Please enter a username" />
+            <label htmlFor="register-username">Username</label>
           </div>
         </div>
-        <div className="form-group">
-          <div className="col-xs-12">
-            <div className="form-material form-material-success">
-              <input className="form-control" type="email" name="registerEmail" placeholder="Please provide your email" />
-              <label htmlFor="register-email">Email</label>
-            </div>
+      </div>
+      <div className="form-group">
+        <div className="col-xs-12">
+          <div className="form-material form-material-success">
+            <input className="form-control" type="email" name="registerEmail" placeholder="Please provide your email" />
+            <label htmlFor="register-email">Email</label>
           </div>
         </div>
-        <div className="form-group">
-          <div className="col-xs-12">
-            <div className="form-material form-material-success">
-              <input className="form-control" type="password" name="registerPassword" placeholder="Choose a strong password.." />
-              <label htmlFor="register-password">Password</label>
-            </div>
+      </div>
+      <div className="form-group">
+        <div className="col-xs-12">
+          <div className="form-material form-material-success">
+            <input className="form-control" type="password" name="registerPassword" placeholder="Choose a strong password.." />
+            <label htmlFor="register-password">Password</label>
           </div>
         </div>
-        <div className="form-group">
-          <div className="col-xs-12">
-            <div className="form-material form-material-success">
-              <input className="form-control" type="password" name="registerPassword2" placeholder="..and confirm it" />
-              <label htmlFor="register-password2">Confirm Password</label>
-            </div>
+      </div>
+      <div className="form-group">
+        <div className="col-xs-12">
+          <div className="form-material form-material-success">
+            <input className="form-control" type="password" name="registerPassword2" placeholder="..and confirm it" />
+            <label htmlFor="register-password2">Confirm Password</label>
           </div>
         </div>
-        <div className="form-group">
-          <div className="col-xs-12">
-            <label className="css-input switch switch-sm switch-success">
-              <input type="checkbox" id="register-terms" name="register-terms" /><span /> I agree with terms &amp; conditions
-            </label>
+      </div>
+      <div className="form-group">
+        <div className="col-xs-7 col-sm-8">
+          <label className="css-input switch switch-sm switch-success">
+            <input type="checkbox" id="register-terms" name="register-terms" /><span /> I agree with terms &amp; conditions
+          </label>
+        </div>
+        <div className="col-xs-5 col-sm-4">
+          <div className="font-s13 text-right push-5-t">
+            <a href="#" data-toggle="modal" data-target="#modal-terms">View Terms</a>
           </div>
         </div>
-        <div className="form-group">
-          <p>{this.state.errorMessage}</p>
-          <button className="btn btn-block btn-success" type="submit"><i className="fa fa-plus pull-right" /> Sign Up</button>
+      </div>
+      <div className="form-group">
+        <p>{this.state.errorMessage}</p>
+        {/* <div className="col-xs-12 col-sm-6 col-sm-offset-3"> */}
+          <button className="btn btn-sm btn-block btn-success" type="submit">Create Account</button>
           <hr className="hr-text" data-content="OR" />
           <button className="btn btn-block btn-primary push-10" type="button"><i className="fa fa-facebook pull-left"></i> Continue with Facebook</button>
-        </div>
-        <p>Already have an account? Log in <a href="/">here</a></p>
+          <p>Already have an account? Log in <a href="/">here</a></p>
+        {/* </div> */}
+      </div>
       </form>
     )
   }

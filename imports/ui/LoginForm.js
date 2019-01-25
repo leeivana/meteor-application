@@ -23,36 +23,43 @@ class LoginForm extends Component {
     }
     render(){
     return(
-    <form className="js-validation-login form-horizontal push-30-t push-50" onSubmit={this.handleSubmit}>
-        <div className="form-group">
-            <div className="col-xs-12">
-                <div className="form-material form-material-primary floating">
-                    <input className="form-control" type="text" name="loginUsername" />
-                    <label htmlFor="login-username">Username</label>
-                </div>
-            </div>
+    <form className="js-validation-login form-horizontal push-30-t" onSubmit={this.handleSubmit}>
+    <div className="form-group">
+    <div className="col-xs-12">
+        <div className="form-material form-material-primary floating">
+        <input className="form-control" type="text" name="loginUsername" />
+        <label htmlFor="login-username">Username</label>
         </div>
-        <div className="form-group">
-            <div className="col-xs-12">
-                <div className="form-material form-material-primary floating">
-                    <input className="form-control" type="password" name="loginPassword" />
-                    <label htmlFor="login-password">Password</label>
-                </div>
-            </div>
+    </div>
+    </div>
+    <div className="form-group">
+    <div className="col-xs-12">
+        <div className="form-material form-material-primary floating">
+        <input className="form-control" type="password" name="loginPassword" />
+        <label htmlFor="login-password">Password</label>
         </div>
-        <div className="form-group">
-            <div className="col-xs-12">
-                <label className="css-input switch switch-sm switch-primary">
-                    <input type="checkbox" id="login-remember-me" name="login-remember-me" /><span></span> Remember Me?
-                </label>
-            </div>
+    </div>
+    </div>
+    <div className="form-group">
+    <div className="col-xs-6">
+        <label className="css-input switch switch-sm switch-primary">
+        <input type="checkbox" id="login-remember-me" name="login-remember-me" /><span /> Remember Me?
+        </label>
+    </div>
+    <div className="col-xs-6">
+        <div className="font-s13 text-right push-5-t">
+        <a href="base_pages_reminder_v2.html">Forgot Password?</a>
         </div>
-        <div className="form-group">
-            <button className="btn btn-block btn-primary" type="submit" value="Login"><i className="si si-login pull-right"></i> Log in</button>
-            <hr className="hr-text" data-content="OR" />
-            <button className="btn btn-block btn-primary push-10" type="button"><i className="fa fa-facebook pull-left"></i> Continue with Facebook</button>
-        </div>
+    </div>
+    </div>
+    <div className="form-group push-30-t">
+    {/* <div className="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4"> */}
+        <button className="btn btn-sm btn-block btn-primary" type="submit">Log in</button>
+        <hr className="hr-text" data-content="OR" />
+        <button className="btn btn-block btn-primary push-10" type="button"><i className="fa fa-facebook pull-left"></i> Continue with Facebook</button>
         <p>If you don't have an account, Register <a href="/register">here</a></p>
+    </div>
+    {/* </div> */}
     </form>
     )
     }
