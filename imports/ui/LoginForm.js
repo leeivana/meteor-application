@@ -2,24 +2,13 @@ import React, { Component } from 'react';
 import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor';
 class LoginForm extends Component {
-  constructor(){
-    super();
-    this.state = {
-        loggedIn: false, 
-    }
-    }
   handleSubmit = (event) => {
     event.preventDefault();
     const username = event.target.loginUsername.value;
     const password = event.target.loginPassword.value;
     Meteor.loginWithPassword(username, password, error => {
-      console.error(error);
+         console.error(error);
     });
-    if(Meteor.user()){
-      this.setState({
-        loggedIn: true, 
-      })
-    }
     console.log('user', Meteor.user());
   }
   render(){

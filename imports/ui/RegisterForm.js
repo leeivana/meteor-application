@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; 
 import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor'; 
+import { FlowRouter } from 'meteor/kadira:flow-router';
 class RegisterForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
@@ -13,10 +14,10 @@ class RegisterForm extends Component {
       email,
       password,
     }, error => {
-      console.log(error.reason);
+      if(!error) {
+        FlowRouter.go('Dashboard');
+      };
     });
-    console.log('user', Meteor.user());
-
   }
   render(){
     return(
