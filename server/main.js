@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor';
+import config from '../config';
 
 Meteor.startup(() => {
   ServiceConfiguration.configurations.remove({
@@ -7,8 +8,8 @@ Meteor.startup(() => {
 
 ServiceConfiguration.configurations.insert({
     service: "facebook",
-    appId: '2279994252077433',
-    secret: '47e04a33c07bea849377623553a96ff2'
+    appId: config.APP_ID,
+    secret: config.APP_SECRET,
 });
 Accounts.onCreateUser(function (options, user) {
 
