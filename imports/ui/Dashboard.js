@@ -27,7 +27,7 @@ const Dashboard = () => {
         {/* Page Content */}
         <div className="content content-boxed">
           <div className="row">
-            <div className="col-sm-7 col-lg-8">
+            {/* <div className="col-sm-7 col-lg-8"> */}
               {/* Timeline */}
               <div className="block">
                 <div className="block-header bg-gray-lighter">
@@ -39,7 +39,7 @@ const Dashboard = () => {
                       <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i className="si si-refresh" /></button>
                     </li>
                   </ul>
-                  <h3 className="block-title"><i className="fa fa-newspaper-o" /> Personal Details</h3>
+                  <h3 className="block-title"><i className="fas fa-user-circle"></i> Personal Details</h3>
                 </div>
                 <div className="block-content">
                   <ul className="list list-timeline pull-t">
@@ -119,51 +119,11 @@ const Dashboard = () => {
                     </li>
                     {/* END System Notification */}
                   </ul>
-                </div>
+                {/* </div> */}
               </div>
               {/* END Timeline */}
             </div>
             <div className="col-sm-5 col-lg-4">
-              {/* Products */}
-              <div className="block">
-                <div className="block-header bg-gray-lighter">
-                  <ul className="block-options">
-                    <li>
-                      <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i className="si si-refresh" /></button>
-                    </li>
-                  </ul>
-                  <h3 className="block-title"><i className="fa fa-fw fa-briefcase" /> Products</h3>
-                </div>
-                <div className="block-content">
-                  <ul className="list list-simple list-li-clearfix">
-                    <li>
-                      <a className="item item-rounded pull-left push-10-r bg-info" href="javascript:void(0)">
-                        <i className="si si-rocket text-white-op" />
-                      </a>
-                      <h5 className="push-10-t">MyPanel</h5>
-                      <div className="font-s13">Responsive App Template</div>
-                    </li>
-                    <li>
-                      <a className="item item-rounded pull-left push-10-r bg-amethyst" href="javascript:void(0)">
-                        <i className="si si-calendar text-white-op" />
-                      </a>
-                      <h5 className="push-10-t">Project Time</h5>
-                      <div className="font-s13">Web application</div>
-                    </li>
-                    <li>
-                      <a className="item item-rounded pull-left push-10-r bg-danger" href="javascript:void(0)">
-                        <i className="si si-speedometer text-white-op" />
-                      </a>
-                      <h5 className="push-10-t">iDashboard</h5>
-                      <div className="font-s13">Bootstrap Admin Template</div>
-                    </li>
-                  </ul>
-                  <div className="text-center push">
-                    <small><a href="javascript:void(0)">View More..</a></small>
-                  </div>
-                </div>
-              </div>
-              {/* END Products */}
             </div>
           </div>
         </div>
