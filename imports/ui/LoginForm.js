@@ -15,10 +15,21 @@ class LoginForm extends Component {
         Meteor.loginWithPassword({username: username}, password, error => {
             if(error) {
                 console.log(error);
-                console.log('reason', error.reason);                
+                console.log('reason', error.reason);     
+                this.setState({errorMessage: error.reason});           
             } else {
                 FlowRouter.go('Dashboard');
             }
+        });
+    }
+    loginWithFacebook = (event) => {
+        event.preventDefault();
+        Meteor.loginWithFacebook({requestPermissions: ['public_profile', 'email']}, err => {
+        if (err) {
+            console.log('Handle errors here: ', err);
+        } else {
+            FlowRouter.go('Dashboard');
+        }
         });
     }
     render(){
@@ -53,13 +64,12 @@ class LoginForm extends Component {
     </div>
     </div>
     <div className="form-group push-30-t">
-    {/* <div className="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4"> */}
+    <p>{this.state.errorMessage}</p>
         <button className="btn btn-sm btn-block btn-primary" type="submit">Log in</button>
         <hr className="hr-text" data-content="OR" />
-        <button className="btn btn-block btn-primary push-10" type="button"><i className="fa fa-facebook pull-left"></i> Continue with Facebook</button>
+        <button onClick={this.loginWithFacebook} className="btn btn-block btn-primary push-10" type="button"><i className="fab fa-facebook pull-left"></i> Continue with Facebook</button>
         <p>If you don't have an account, Register <a href="/register">here</a></p>
     </div>
-    {/* </div> */}
     </form>
     )
     }
