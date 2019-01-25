@@ -1,16 +1,23 @@
 import React, { Component } from 'react'; 
-import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor';
+import './Form.scss';
 class LoginForm extends Component {
+    constructor(){
+        super();
+        this.state = { 
+            errorMessage: '', 
+        }
+    }
     handleSubmit = (event) => {
         event.preventDefault();
         const username = event.target.loginUsername.value;
         const password = event.target.loginPassword.value;
         Meteor.loginWithPassword({username: username}, password, error => {
-            if(!error) {
-                FlowRouter.go('Dashboard');
-            } else {
+            if(error) {
                 console.log(error);
+                console.log('reason', error.reason);                
+            } else {
+                FlowRouter.go('Dashboard');
             }
         });
     }
@@ -41,9 +48,9 @@ class LoginForm extends Component {
             </div>
         </div>
         <div className="form-group">
-            <div className="col-xs-12 col-sm-6 col-md-4">
-                <button className="btn btn-block btn-primary" type="submit" value="Login"><i className="si si-login pull-right"></i> Log in</button>
-            </div>
+            <button className="btn btn-block btn-primary" type="submit" value="Login"><i className="si si-login pull-right"></i> Log in</button>
+            <hr className="hr-text" data-content="OR" />
+            <button className="btn btn-block btn-primary push-10" type="button"><i className="fa fa-facebook pull-left"></i> Continue with Facebook</button>
         </div>
         <p>If you don't have an account, Register <a href="/register">here</a></p>
     </form>

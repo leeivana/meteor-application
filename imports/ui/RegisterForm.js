@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor'; 
 import { FlowRouter } from 'meteor/kadira:flow-router';
+
+import './Form.scss';
 class RegisterForm extends Component {
   constructor(){
     super();
@@ -25,13 +27,13 @@ class RegisterForm extends Component {
         email,
         password,
       }, error => {
-        if(!error) {
-          FlowRouter.go('Dashboard');
+        if(error) {
+          console.log(Meteor.userId());
+          console.log(Meteor.user());
+          console.log('reason', error.reason);
+          this.setState({errorMessage: error.reason})
         } 
-        console.log(Meteor.userId());
-        console.log(Meteor.user());
-        console.log('reason', error.reason);
-        this.setState({errorMessage: error.reason})
+        FlowRouter.go('Dashboard');
       });
     }
   }
@@ -79,9 +81,9 @@ class RegisterForm extends Component {
         </div>
         <div className="form-group">
           <p>{this.state.errorMessage}</p>
-          <div className="col-xs-12 col-sm-6 col-md-5">
-            <button className="btn btn-block btn-success" type="submit"><i className="fa fa-plus pull-right" /> Sign Up</button>
-          </div>
+          <button className="btn btn-block btn-success" type="submit"><i className="fa fa-plus pull-right" /> Sign Up</button>
+          <hr className="hr-text" data-content="OR" />
+          <button className="btn btn-block btn-primary push-10" type="button"><i className="fa fa-facebook pull-left"></i> Continue with Facebook</button>
         </div>
         <p>Already have an account? Log in <a href="/">here</a></p>
       </form>

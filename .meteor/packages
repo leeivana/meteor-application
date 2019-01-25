@@ -22,3 +22,6 @@ static-html
 react-meteor-data
 accounts-password
 kadira:flow-router
+accounts-facebook
+service-configuration
+fourseven:scss
