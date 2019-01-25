@@ -6,10 +6,13 @@ class LoginForm extends Component {
         event.preventDefault();
         const username = event.target.loginUsername.value;
         const password = event.target.loginPassword.value;
-        Meteor.loginWithPassword(username, password, error => {
-            console.error(error);
+        Meteor.loginWithPassword({username: username}, password, error => {
+            if(!error) {
+                FlowRouter.go('Dashboard');
+            } else {
+                console.log(error);
+            }
         });
-        console.log('user', Meteor.user());
     }
     render(){
     return(

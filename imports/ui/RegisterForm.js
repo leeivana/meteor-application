@@ -15,19 +15,25 @@ class RegisterForm extends Component {
     const email = event.target.registerEmail.value;
     const password = event.target.registerPassword.value;
     const password2 = event.target.registerPassword2.value;
-    Accounts.createUser({
-      username, 
-      email,
-      password,
-    }, error => {
-      if(!error) {
-        FlowRouter.go('Dashboard');
-      } 
-      console.log(Meteor.userId());
-      console.log(Meteor.user());
-      console.log('reason', error.reason);
-      this.setState({errorMessage: error.reason})
-    });
+    if(password !== password2){
+      this.setState({
+        errorMessage: 'Passwords do not match!',
+      })
+    } else {
+      Accounts.createUser({
+        username, 
+        email,
+        password,
+      }, error => {
+        if(!error) {
+          FlowRouter.go('Dashboard');
+        } 
+        console.log(Meteor.userId());
+        console.log(Meteor.user());
+        console.log('reason', error.reason);
+        this.setState({errorMessage: error.reason})
+      });
+    }
   }
   render(){
     return(

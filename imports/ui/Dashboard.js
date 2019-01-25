@@ -10,6 +10,7 @@ const Dashboard = () => {
   return(
     <div>
       Dashboard
+      <p>LOGGED IN AS: {Meteor.user().username}</p>
       <button className="btn-default" onClick={this.handleClick}>Logout</button>
     </div>
   )
