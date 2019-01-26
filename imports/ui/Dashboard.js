@@ -41,8 +41,7 @@ const Dashboard = () => {
                     <li>
                       <div className="list-timeline-time">First Name</div>
                       <div className="list-timeline-content">
-                        <p className="font-w600">FIRST NAME HERE</p>
-
+                        <p className="font-w600">{Meteor.user().first}</p>
                       </div>
                     </li>
                     <li>
@@ -56,7 +55,6 @@ const Dashboard = () => {
                       <div className="list-timeline-time">Email Address</div>
                       <div className="list-timeline-content">
                         <p className="font-w600">{Meteor.user().emails[0].address}</p>
-
                       </div>
                     </li>
                   </ul>

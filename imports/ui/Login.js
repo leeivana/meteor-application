@@ -11,7 +11,7 @@ const Login = () => {
               <div className="push-30-t push-50 animated fadeIn">
                 <div className="text-center">
                   <i className="far fa-lemon fa-3x"></i>
-                  <p className="text-muted push-15-t">A perfect match for your project</p>
+                  <p className="text-muted push-15-t">The BEST Team Building Application</p>
                   <LoginForm />
                 </div>
               </div>

@@ -14,11 +14,10 @@ class LoginForm extends Component {
         const password = event.target.loginPassword.value;
         Meteor.loginWithPassword({username: username}, password, error => {
             if(error) {
-                console.log(error);
-                console.log('reason', error.reason);     
                 this.setState({errorMessage: error.reason});           
             } else {
                 FlowRouter.go('Dashboard');
+                console.log(Meteor.user())
             }
         });
     }
@@ -29,6 +28,7 @@ class LoginForm extends Component {
             console.log('Handle errors here: ', err);
         } else {
             FlowRouter.go('Dashboard');
+            console.log(Meteor.user());
         }
         });
     }
