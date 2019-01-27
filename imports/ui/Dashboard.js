@@ -41,13 +41,13 @@ const Dashboard = () => {
                     <li>
                       <div className="list-timeline-time">First Name</div>
                       <div className="list-timeline-content">
-                        <p className="font-w600">{Meteor.user().first}</p>
+                        <p className="font-w600">{Meteor.user().profile.firstname}</p>
                       </div>
                     </li>
                     <li>
                       <div className="list-timeline-time">Last Name</div>
                       <div className="list-timeline-content">
-                        <p className="font-w600">LAST NAME HERE</p>
+                        <p className="font-w600">{Meteor.user().profile.lastname}</p>
 
                       </div>
                     </li>

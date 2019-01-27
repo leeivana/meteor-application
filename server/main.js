@@ -13,12 +13,16 @@ Meteor.startup(() => {
   });
   Accounts.onCreateUser(function (options, user) {
     if (!user.services.facebook) {
-      return user;
+      user['profile'] = {};
+      user.profile['firstname'] = '';
+      user.profile['lastname'] = '';
+      return user; 
     }
+    user['profile'] = {};
+    user.profile['firstname'] = user.services.facebook.first_name;
+    user.profile['lastname'] = user.services.facebook.last_name;
     user.username = user.services.facebook.name;
     user.emails = [{address: user.services.facebook.email}];
-    user['first'] = user.services.facebook.name;
-    user['last'] = user.services.facebook.last_name;
     return user;
   });
 });

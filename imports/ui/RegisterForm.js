@@ -34,6 +34,7 @@ class RegisterForm extends Component {
           this.setState({errorMessage: error.reason})
         } else {
           FlowRouter.go('Dashboard');
+          console.log(Meteor.user());
         }
       });
     }
@@ -45,6 +46,7 @@ class RegisterForm extends Component {
           console.log('Handle errors here: ', err);
       } else {
         FlowRouter.go('Dashboard');
+        console.log(Meteor.user());
       }
     });
   }
