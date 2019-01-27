@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
-import MainScreen from './MainScreen';
+import PersonalDetailScreen from './PersonalDetailScreen';
 import EditScreen from './EditScreen'; 
+import TeamScreen from './TeamScreen';
 class Dashboard extends Component {
   constructor(){
     super();
@@ -22,8 +23,9 @@ class Dashboard extends Component {
   render(){
     return(
       <div>
-        <button className="btn-default" onClick={this.handleClick}>Logout</button>
         <main id="main-container">
+        <button style={{float: 'right'}} className="btn btn-default" onClick={this.handleClick}>Logout</button>
+
           <div className="content bg-image" style={{backgroundColor: '#d2d7d3'}}>
             <div className="clearfix">
               <div className="animated fadeIn">
@@ -33,9 +35,12 @@ class Dashboard extends Component {
             </div>
           </div>
           {(!this.state.screen || this.state.screen === 'HomeScreen') ? 
-            <MainScreen 
-            navigateToPage={this.navigateToPage}
-            />
+            <div>
+              <PersonalDetailScreen 
+              navigateToPage={this.navigateToPage}
+              />
+              <TeamScreen />
+            </div>
             : (this.state.screen === 'EditScreen') ? 
                 <EditScreen 
                 navigateToPage={this.navigateToPage}

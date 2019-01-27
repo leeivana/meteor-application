@@ -64,7 +64,7 @@ class EditScreen extends Component {
                 </li>
               </ul>
           </div>
-          <input type="submit" value="Submit" />
+          <button style={{float: 'right'}} className="btn btn-rounded btn-info" type="submit" value="Submit">Submit <i class="fas fa-pencil-alt"></i></button>
         </div>
         <div className="col-sm-5 col-lg-4">
         </div>
