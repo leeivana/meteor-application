@@ -25,4 +25,11 @@ Meteor.startup(() => {
     user.emails = [{address: user.services.facebook.email}];
     return user;
   });
+  
+  Meteor.users.allow({
+  	update: function (userId, doc, fields, modifier) {
+		console.log('UPDATE USER');
+		return true; 
+	}
+});
 });
