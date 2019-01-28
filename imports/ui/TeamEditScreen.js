@@ -12,6 +12,7 @@ class TeamEditScreen extends Component {
       searchUser: '',
       results: '',
       team: [],
+      errorMessage: '',
     }
   }
   handleInputChange = event => {
@@ -25,23 +26,37 @@ class TeamEditScreen extends Component {
     if(this.state.searchUser) {
       this.setState({
         results: this.props.users.filter(user =>  {
-          return user.username.includes(this.state.searchUser) || user.username.search(this.state.searchUser)
+          return user.username.includes(this.state.searchUser)
         })
       })
     };
-    console.log(this.state);
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    // Teams.insert({
-
-    // })
+    if(!this.state.teamName){
+      this.setState({
+        errorMessage: 'Team name is required',
+      });
+      return false; 
+    } else if (this.state.team.length === 0 ) {
+      this.setState({
+        errorMessage: 'You must have atleast one team member',
+      });
+      return false;
+    } 
+    Teams.insert({
+      teamName: this.state.teamName,
+      teamMembers: this.state.team,
+      createdAt: new Date(),
+      owner: Meteor.userId(),
+      username: Meteor.user().username,
+    })
+    this.props.navigateToPage('teamScreen', 'display');
   }
 
   addUser = user => {
     event.preventDefault();
-    console.log(user);
     const updatedTeam = this.state.team.concat(user);
     this.setState({
       team: updatedTeam,
@@ -68,12 +83,18 @@ class TeamEditScreen extends Component {
   renderUsers = () => {
     return this.state.results.map(user => {
       if(this.doesExist(user._id)){
-        return <button onClick={()=>{this.removeUser(user)}} key={user._id} className="btn"><i className="fas fa-minus"></i> {user.username}</button>
+        return <button onClick={()=>{this.removeUser(user)}} key={user._id} className="btn"><i className="fas fa-user-minus"></i> {user.username}</button>
       }
       else {
-        return <button onClick={()=>{this.addUser(user)}} key={user._id} className="btn"><i className='fas fa-plus'></i> {user.username}</button>
+        return <button onClick={()=>{this.addUser(user)}} key={user._id} className="btn"><i className="fas fa-user-plus"></i> {user.username}</button>
       }
     })
+  }
+
+  renderTeam = () => {
+    return this.state.team.map(member => (
+      <div key={member.username}>{member.username}</div>
+    ))
   }
 
   render(){
@@ -95,11 +116,11 @@ class TeamEditScreen extends Component {
                     <div className="list-timeline-time">SEARCH</div>
                     <div className="list-timeline-content">
     
-                    <form>
+                    <form onSubmit={this.handleSubmit}>
                       <div className="form-group row">
                         <label htmlFor="teamName" className="col-sm-2 col-form-label">Team Name</label>
                         <div className="col-sm-10">
-                          <input type="text" className="form-control" id="teamName" name="teamName" placeholder="Team Name" value={this.state.teamName} onChange={this.handleInputChange}/>
+                          <input type="text" className="form-control" id="teamName" name="teamName" placeholder="Team Name" value={this.state.teamName} onChange={this.handleInputChange} required />
                         </div>
                       </div>
                       <div className="form-group row">
@@ -115,17 +136,28 @@ class TeamEditScreen extends Component {
                         this.renderUsers()
                         :
                           <p>No Results to Show</p>
-                        
+                      }
+                        </div>
+                      </div>
+                      <div className="form-group row">
+                        <label className="col-sm-2 col-form-label">Team Members</label>
+                        <div className="col-sm-10">
+                      {this.state.team.length > 0 ? 
+                        this.renderTeam()
+                        :
+                          <p>No Team Members</p>
                       }
                         </div>
                       </div>
                       <div className="form-group row">
                         <div className="col-sm-10">
+                          {this.state.errorMessage &&
+                            <p>{this.state.errorMessage}</p>
+                          }
                           <button onClick={this.handleSubmit} type="submit" className="btn btn-primary">Create Team</button>
                         </div>
                       </div>
                     </form>
-    
                     </div>
                   </li>
                 </ul>

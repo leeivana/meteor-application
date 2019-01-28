@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-import config from '../config';
+import config from '../config'; 
+import '../imports/api/teams';
 
 Meteor.startup(() => {
   ServiceConfiguration.configurations.remove({

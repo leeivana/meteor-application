@@ -6,6 +6,8 @@ import PersonalDetailScreen from './PersonalDetailScreen';
 import EditScreen from './EditScreen'; 
 import TeamScreen from './TeamScreen';
 import TeamEditScreen from './TeamEditScreen';
+import AllTeams from './AllTeams';
+
 class Dashboard extends Component {
   constructor(){
     super();
@@ -42,13 +44,20 @@ class Dashboard extends Component {
               navigateToPage={this.navigateToPage}
               />
               {this.state.teamScreen === 'display' || !this.state.teamScreen ? 
-              <TeamScreen 
-              navigateToPage={this.navigateToPage}
-              />
+              <div>
+                <TeamScreen 
+                navigateToPage={this.navigateToPage}
+                />
+                <AllTeams />
+              </div>
               : 
-              <TeamEditScreen 
-              navigateToPage={this.navigateToPage}
-              />
+              <div>
+                <TeamEditScreen 
+                navigateToPage={this.navigateToPage}
+                />
+                <AllTeams />
+              </div>
+                
               }
             </div>
             : (this.state.screen === 'EditScreen') ? 
@@ -57,13 +66,19 @@ class Dashboard extends Component {
                 navigateToPage={this.navigateToPage}
                 />
                 {this.state.teamScreen === 'display' || !this.state.teamScreen ? 
-                <TeamScreen 
-                navigateToPage={this.navigateToPage}
-                />
+                <div>
+                  <TeamScreen 
+                  navigateToPage={this.navigateToPage}
+                  />
+                  <AllTeams />
+                </div>
                 :
-                <TeamEditScreen 
-                navigateToPage={this.navigateToPage}
-                />
+                <div>
+                  <TeamEditScreen 
+                  navigateToPage={this.navigateToPage}
+                  />
+                  <AllTeams />
+                </div>
                 }
             </div>
             : 
