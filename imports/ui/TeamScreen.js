@@ -1,34 +1,53 @@
 import React from 'react';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Teams } from '../api/teams.js';
 
-const TeamScreen = () => {
+const TeamScreen = (props) => {
+  renderTeams = () => {
+    return props.teams.map(team => (
+      <li>
+        <div className="list-timeline-time">{team.name}</div>
+        <div className="list-timeline-content">
+          <p className="font-w600">TEAM MEMBERS</p>
+        </div>
+      </li>
+    ))
+  }
   return (
-<div className="content content-boxed">
-    <div className="row">
-        <div className="block">
-          <div className="block-header bg-gray-lighter">
-            <ul className="block-options">
-              <li>
-                <button onClick={() => {console.log('clicked')}} type="button"><i className="far fa-plus-square"></i> CREATE A TEAM</button>
-              </li>
-            </ul>
-            <h3 className="block-title"><i className="fas fa-laugh-beam"></i> Teams</h3>
+    <div className="content content-boxed">
+      <div className="row">
+          <div className="block">
+            <div className="block-header bg-gray-lighter">
+              <ul className="block-options">
+                <li>
+                  <button onClick={() => {props.navigateToPage('teamScreen', 'EditTeam')}} type="button"><i className="far fa-plus-square"></i> CREATE A TEAM</button>
+                </li>
+              </ul>
+              <h3 className="block-title"><i className="fas fa-laugh-beam"></i> Teams</h3>
+            </div>
+            <div className="block-content">
+              <ul className="list list-timeline pull-t">                                        
+                {props.teams.length === 0 ? 
+                <li>
+                  <div className="list-timeline-content">
+                    <p className="font-w600">No Teams to Display</p>
+                  </div>
+                </li>
+                :
+                renderTeams()
+                }
+              </ul>
           </div>
-          <div className="block-content">
-            <ul className="list list-timeline pull-t">                                        
-              <li>
-                <div className="list-timeline-time">TEAM NAME</div>
-                <div className="list-timeline-content">
-                  <p className="font-w600">TEAM MEMBERS</p>
-                </div>
-              </li>
-            </ul>
+        </div>
+        <div className="col-sm-5 col-lg-4">
         </div>
       </div>
-      <div className="col-sm-5 col-lg-4">
-      </div>
     </div>
-  </div>
   );
 }
 
-export default TeamScreen; 
+export default withTracker(() => {
+  return {
+    teams: Teams.find({}).fetch(),
+  };
+})(TeamScreen);

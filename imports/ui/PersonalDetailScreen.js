@@ -10,7 +10,7 @@ const PersonalDetailScreen = (props) => {
           <div className="block-header bg-gray-lighter">
             <ul className="block-options">
               <li>
-                <button onClick={() => {props.navigateToPage('EditScreen')}} type="button"><i className="far fa-edit"></i> EDIT PERSONAL DETAILS</button>
+                <button onClick={() => {props.navigateToPage('screen', 'EditScreen')}} type="button"><i className="far fa-edit"></i> EDIT PERSONAL DETAILS</button>
               </li>
             </ul>
             <h3 className="block-title"><i className="fas fa-user-circle"></i> Personal Details</h3>

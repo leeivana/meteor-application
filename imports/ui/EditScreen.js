@@ -37,7 +37,7 @@ class EditScreen extends Component {
             <div className="block-header bg-gray-lighter">
               <ul className="block-options">
                 <li>
-                  <button onClick={() => {this.props.navigateToPage('HomeScreen')}} type="button"><i className="far fa-user-circle"></i> BACK TO PROFILE</button>
+                  <button onClick={() => {this.props.navigateToPage('screen', 'HomeScreen')}} type="button"><i className="far fa-user-circle"></i> BACK TO PROFILE</button>
                 </li>
               </ul>
               <h3 className="block-title"><i className="fas fa-user-circle"></i> Personal Details</h3>
@@ -47,24 +47,27 @@ class EditScreen extends Component {
                 <li>
                   <div className="list-timeline-time">First Name</div>
                   <div className="list-timeline-content">
-                    <input name="firstName" onChange={this.handleInputChange} type="text" value={this.state.firstName}/>
+                    <input className="form-control" name="firstName" onChange={this.handleInputChange} type="text" value={this.state.firstName} placeholder="Enter First Name"/>
                   </div>
                 </li>
                 <li>
                   <div className="list-timeline-time">Last Name</div>
                   <div className="list-timeline-content">
-                  <input name="lastName" onChange={this.handleInputChange} type="text" value={this.state.lastName}/>
+                  <input className="form-control" name="lastName" onChange={this.handleInputChange} type="text" value={this.state.lastName} placeholder="Enter Last Name"/>
                   </div>
                 </li>
                 <li>
                   <div className="list-timeline-time">Email Address</div>
                   <div className="list-timeline-content">
-                    <input name="emailAddress" onChange={this.handleInputChange} type="email" value={this.state.emailAddress} />
+                  <div className="form-group">
+                    <input className="form-control" name="emailAddress" onChange={this.handleInputChange} type="email" value={this.state.emailAddress} placeholder="Enter email" id="emailAddress"/>
+                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
                   </div>
                 </li>
-              </ul>
+              </ul> 
           </div>
-          <button style={{float: 'right'}} className="btn btn-rounded btn-info" type="submit" value="Submit">Submit <i class="fas fa-pencil-alt"></i></button>
+          <button style={{float: 'right'}} className="btn btn-rounded btn-info" type="submit" value="Submit">Submit <i className="fas fa-pencil-alt"></i></button>
         </div>
         <div className="col-sm-5 col-lg-4">
         </div>

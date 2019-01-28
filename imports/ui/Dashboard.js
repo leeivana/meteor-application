@@ -5,11 +5,13 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import PersonalDetailScreen from './PersonalDetailScreen';
 import EditScreen from './EditScreen'; 
 import TeamScreen from './TeamScreen';
+import TeamEditScreen from './TeamEditScreen';
 class Dashboard extends Component {
   constructor(){
     super();
     this.state = {
       screen: '',
+      teamScreen: '',
     }
   }
   handleClick = (event) => {
@@ -17,8 +19,8 @@ class Dashboard extends Component {
     FlowRouter.go('Home');
   }
 
-  navigateToPage = (screen) => {
-    this.setState({screen});
+  navigateToPage = (type, screen) => {
+    this.setState({[type]: screen});
   }
   render(){
     return(
@@ -39,12 +41,31 @@ class Dashboard extends Component {
               <PersonalDetailScreen 
               navigateToPage={this.navigateToPage}
               />
-              <TeamScreen />
+              {this.state.teamScreen === 'display' || !this.state.teamScreen ? 
+              <TeamScreen 
+              navigateToPage={this.navigateToPage}
+              />
+              : 
+              <TeamEditScreen 
+              navigateToPage={this.navigateToPage}
+              />
+              }
             </div>
             : (this.state.screen === 'EditScreen') ? 
+            <div>
                 <EditScreen 
                 navigateToPage={this.navigateToPage}
                 />
+                {this.state.teamScreen === 'display' || !this.state.teamScreen ? 
+                <TeamScreen 
+                navigateToPage={this.navigateToPage}
+                />
+                :
+                <TeamEditScreen 
+                navigateToPage={this.navigateToPage}
+                />
+                }
+            </div>
             : 
             <p>Page Not Found</p>
           }
