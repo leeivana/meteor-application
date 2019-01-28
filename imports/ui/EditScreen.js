@@ -26,7 +26,7 @@ class EditScreen extends Component {
     event.preventDefault();
     Meteor.users.update({_id:Meteor.user()._id}, { $set: {'emails.0.address': this.state.emailAddress, 'profile.firstname': this.state.firstName, 'profile.lastname': this.state.lastName}});
     console.log(Meteor.user());
-    this.props.navigateToPage('HomeScreen');
+    this.props.navigateToPage('screen', 'HomeScreen');
   }
   render(){
     return (
