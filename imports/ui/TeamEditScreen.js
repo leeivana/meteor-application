@@ -25,7 +25,7 @@ class TeamEditScreen extends Component {
     if(this.state.searchUser) {
       this.setState({
         results: this.props.users.filter(user =>  {
-          return user.username.includes(this.state.searchUser)
+          return user.username.toLowerCase().includes(this.state.searchUser.toLowerCase());
         })
       })
     };
