@@ -10,18 +10,26 @@ const TeamScreen = props => {
         return Meteor.userId().indexOf(member._id) > -1;
       })
     })
-    return arrayOfTeams.map(team => (
-      <li key={`${team._id}, join`}>
-        <div className="list-timeline-time">{team.teamName}</div>
+    if(arrayOfTeams.length > 0) {
+      return arrayOfTeams.map(team => (
+        <li key={`${team._id}, join`}>
+          <div className="list-timeline-time">{team.teamName}</div>
+          <div className="list-timeline-content">
+            {team.teamMembers.map((member) => {
+              return (
+                <p key={`${member._id}, join`} className="font-w600">{member.username}</p>
+              )
+            })}
+          </div>
+        </li>
+      ))
+    } else {
+      return (
         <div className="list-timeline-content">
-          {team.teamMembers.map((member) => {
-            return (
-              <p key={`${member._id}, join`} className="font-w600">{member.username}</p>
-            )
-          })}
-        </div>
-      </li>
-    ))
+        <p className="font-w600">No Teams to Display</p>
+      </div>
+      )
+    }
   }
   return (
     <div className="content content-boxed">
@@ -37,7 +45,7 @@ const TeamScreen = props => {
             </div>
             <div className="block-content">
               <ul className="list list-timeline pull-t">                                        
-                renderTeams()
+                {renderTeams()}
               </ul>
           </div>
         </div>
