@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Teams } from '../api/teams.js';
@@ -36,12 +35,12 @@ class TeamEditScreen extends Component {
     event.preventDefault();
     if(!this.state.teamName){
       this.setState({
-        errorMessage: 'Team name is required',
+        errorMessage: '* Team name is required',
       });
       return false; 
     } else if (this.state.team.length === 0 ) {
       this.setState({
-        errorMessage: 'You must have atleast one team member',
+        errorMessage: '* You must have atleast one team member',
       });
       return false;
     } 
@@ -152,7 +151,7 @@ class TeamEditScreen extends Component {
                       <div className="form-group row">
                         <div className="col-sm-10">
                           {this.state.errorMessage &&
-                            <p>{this.state.errorMessage}</p>
+                            <p style={{color: 'red'}}>{this.state.errorMessage}</p>
                           }
                           <button onClick={this.handleSubmit} type="submit" className="btn btn-primary">Create Team</button>
                         </div>

@@ -71,6 +71,6 @@ class TeamScreen extends Component{
 
 export default withTracker(() => {
   return {
-    teams: Teams.find({}).fetch(),
+    teams: Teams.find({}, { sort: {createdAt: -1 }}).fetch(),
   };
 })(TeamScreen);
