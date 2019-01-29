@@ -44,13 +44,7 @@ class TeamEditScreen extends Component {
       });
       return false;
     } 
-    Teams.insert({
-      teamName: this.state.teamName,
-      teamMembers: this.state.team,
-      createdAt: new Date(),
-      owner: Meteor.userId(),
-      username: Meteor.user().username,
-    })
+    Meteor.call('create.team', this.state.teamName, this.state.team);
     this.props.navigateToPage('teamScreen', 'display');
   }
 
