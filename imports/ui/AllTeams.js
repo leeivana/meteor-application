@@ -16,7 +16,7 @@ const AllTeams = props => {
           })}
         </div>
       </li>
-      )})
+    )})
   }
   return (
     <div className="content content-boxed">
