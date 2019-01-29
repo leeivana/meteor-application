@@ -70,6 +70,7 @@ class TeamScreen extends Component{
 }
 
 export default withTracker(() => {
+  Meteor.subscribe('teams');
   return {
     teams: Teams.find({}, { sort: {createdAt: -1 }}).fetch(),
   };

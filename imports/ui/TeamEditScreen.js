@@ -165,6 +165,8 @@ class TeamEditScreen extends Component {
 }
 
 export default withTracker(() => {
+  Meteor.subscribe('teams');
+
   return {
     teams: Teams.find({}).fetch(),
     users: Meteor.users.find({}).fetch(),

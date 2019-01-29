@@ -28,16 +28,19 @@ class Dashboard extends Component {
     return(
       <div>
         <main id="main-container">
-        <button style={{float: 'right'}} className="btn btn-default" onClick={this.handleClick}>Logout</button>
-
-          <div className="content bg-image" style={{backgroundColor: '#d2d7d3'}}>
-            <div className="clearfix">
-              <div className="animated fadeIn">
-                <i className="fas fa-user-astronaut fa-4x"></i>
+        <nav className="navbar navbar-default">
+              <div className="container-fluid">
+                <div className="navbar-header">
+                <a className="navbar-brand" href="#">
+                  <i className="fas fa-lemon"></i>
+                </a>
+                  <p className="navbar-text">Signed in as {Meteor.user().username}</p>
+                  </div>
+                  <ul className="nav navbar-nav navbar-right">
+                    <li><a href="#" onClick={this.handleClick}>Logout</a></li>
+                  </ul>
               </div>
-              <h1 className="h2 push-5-t animated zoomIn">{Meteor.user().username}</h1>
-            </div>
-          </div>
+            </nav>
           {(!this.state.screen || this.state.screen === 'HomeScreen') ? 
             <div>
               <PersonalDetailScreen 

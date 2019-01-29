@@ -1,8 +1,9 @@
 import React from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Teams } from '../api/teams.js';
+import { Meteor } from 'meteor/meteor';
 
-const AllTeams = (props) => {
+const AllTeams = props => {
   renderTeams = () => {
     return props.teams.map(team => {
       return (<li key={`${team._id}, general`}>
@@ -46,6 +47,7 @@ const AllTeams = (props) => {
 }
 
 export default withTracker(() => {
+  Meteor.subscribe('teams');
   return {
     teams: Teams.find({}, { sort: {createdAt: -1 }}).fetch(),
   };
