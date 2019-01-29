@@ -40,7 +40,7 @@ class TeamEditScreen extends Component {
       return false; 
     } else if (this.state.team.length === 0 ) {
       this.setState({
-        errorMessage: '* You must have atleast one team member',
+        errorMessage: '* You must have at least one team member',
       });
       return false;
     } 
