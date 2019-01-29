@@ -107,7 +107,7 @@ class TeamEditScreen extends Component {
                     <button onClick={() => {this.props.navigateToPage('teamScreen', 'display')}} type="button"><i className="far fa-eye"></i> DISPLAY TEAMS</button>
                   </li>
                 </ul>
-                <h3 className="block-title"><i className="fas fa-laugh-beam"></i> Teams</h3>
+                <h3 className="block-title"><i className="fas fa-laugh-beam"></i> CREATE A TEAM</h3>
               </div>
               <div className="block-content">
                 <ul className="list list-timeline pull-t">                                        
