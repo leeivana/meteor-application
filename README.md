@@ -73,8 +73,16 @@ Teams.insert({
 ```
 ## Difficulties
 While developing this application, there were a couple things I found challenging. 
-1. Learning MeteorJS 
-    - 
+
+1. Learning MeteorJS
+   - Prior to the assignment, I never used, nor heard of MeteorJS and therefore, I had to learn MeteorJS concurrently while developing this application. However, upon developing the application, I've come to realize that Meteor is very efficient and easy to use specifically because of it's simplicity and abundance of libraries and packages.
+2.  The 'Magic' of MeteorJS
+    - Similar to what Rails does for Ruby, Meteor helps simplfy a set of complex technologies and allows for the creation of real-time applications using a single language on both the client and server side. However, it is also because of this 'magic' that it took more time to understand why certain things work the way they do. 
+3.   Built in Security Methods 
+    - Meteor comes with a lot of built in security methods. For example, every Meteor project has the `insecure` package bundled with it. This package allows for client side code to directly manipulate the database with calls like `insert`, `update` and `remove`. Packages like `insecure` and `autopublish` made developing the application more difficulty as upon removing the package, a lot more code had to be implemented to make the application more secure. 
+
 
 ## Future Implementations
+- More O'Auth login options (Google, Twitter etc..) 
+- Further styling and animations 
 
