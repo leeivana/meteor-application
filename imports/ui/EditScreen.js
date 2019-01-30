@@ -59,14 +59,12 @@ class EditScreen extends Component {
                   <div className="form-group">
                     <input className="form-control" name="emailAddress" onChange={this.handleInputChange} type="email" value={this.state.emailAddress} placeholder="Enter email" id="emailAddress"/>
                     <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <button style={{float: 'right'}} className="btn btn-rounded btn-default" type="submit" value="Submit">Submit <i className="fas fa-pencil-alt"></i></button>
                   </div>
                   </div>
                 </li>
               </ul> 
           </div>
-          <button style={{float: 'right'}} className="btn btn-rounded btn-info" type="submit" value="Submit">Submit <i className="fas fa-pencil-alt"></i></button>
-        </div>
-        <div className="col-sm-5 col-lg-4">
         </div>
       </div>
       </form>
