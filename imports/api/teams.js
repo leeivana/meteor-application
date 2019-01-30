@@ -29,11 +29,5 @@ Meteor.methods({
     })
   }
 });
-// Teams.allow({
-//   insert: function(userId, doc){
-//     //allow only if userId exists.
-//     return !!userId;
-//   }
-// });
 
 

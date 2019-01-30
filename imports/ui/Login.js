@@ -1,8 +1,9 @@
-import React, { Component } from 'react'; 
+import React  from 'react'; 
 
 import LoginForm from './LoginForm';
 
 const Login = () => {
+  <h1 className="h3 push-10-t">Create Account</h1>
     return (
       <div className="bg-white pulldown">
         <div className="content content-boxed overflow-hidden">
@@ -11,7 +12,8 @@ const Login = () => {
               <div className="push-30-t push-50 animated fadeIn">
                 <div className="text-center">
                   <i className="fab fa-connectdevelop fa-3x"></i>
-                  <p className="text-muted push-15-t">The BEST Team Building Application</p>
+                  <h1 className="h3 push-10-t">Login</h1>
+                  <p className="text-muted push-15-t">Team Interface, The BEST Team Building Application</p>
                   <LoginForm />
                 </div>
               </div>

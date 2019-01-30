@@ -18,14 +18,11 @@ class EditScreen extends Component {
     this.setState({
       [name]: value,
     });
-    console.log(this.state);
-    console.log(Meteor.user());
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
     Meteor.users.update({_id:Meteor.user()._id}, { $set: {'emails.0.address': this.state.emailAddress, 'profile.firstname': this.state.firstName, 'profile.lastname': this.state.lastName}});
-    console.log(Meteor.user());
     this.props.navigateToPage('screen', 'HomeScreen');
   }
   render(){

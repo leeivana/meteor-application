@@ -17,11 +17,17 @@ class RegisterForm extends Component {
     const email = event.target.registerEmail.value;
     const password = event.target.registerPassword.value;
     const password2 = event.target.registerPassword2.value;
-    if(password !== password2){
+
+    if(password.length < 5) {
+      this.setState({
+        errorMessage: 'Password must be at least 5 characters',
+      })
+    } else if(password !== password2){
       this.setState({
         errorMessage: 'Passwords do not match!',
       })
-    } else {
+    } 
+    else {
       Accounts.createUser({
         username, 
         email,

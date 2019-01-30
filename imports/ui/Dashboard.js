@@ -31,9 +31,7 @@ class Dashboard extends Component {
           <nav className="navbar navbar-default">
               <div className="container-fluid">
                 <div className="navbar-header">
-                <a className="navbar-brand" href="#">
-                <i className="fab fa-connectdevelop fa-2x"></i>Team Interface
-                </a>
+                  <i className="navbar-brand fab fa-connectdevelop fa-2x"> <span> Team Interface</span></i> 
                   <p className="navbar-text">Signed in as {Meteor.user().username}</p>
                   </div>
                   <ul className="nav navbar-nav navbar-right">
