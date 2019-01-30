@@ -51,18 +51,6 @@ class LoginForm extends Component {
         </div>
     </div>
     </div>
-    <div className="form-group">
-    <div className="col-xs-6">
-        <label className="css-input switch switch-sm switch-primary">
-        <input type="checkbox" id="login-remember-me" name="login-remember-me" /><span /> Remember Me?
-        </label>
-    </div>
-    <div className="col-xs-6">
-        <div className="font-s13 text-right push-5-t">
-        <a href="base_pages_reminder_v2.html">Forgot Password?</a>
-        </div>
-    </div>
-    </div>
     <div className="form-group push-30-t">
     <p>{this.state.errorMessage}</p>
         <button className="btn btn-sm btn-block btn-primary" type="submit">Log in</button>

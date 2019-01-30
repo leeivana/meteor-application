@@ -86,18 +86,6 @@ class RegisterForm extends Component {
         </div>
       </div>
       <div className="form-group">
-        <div className="col-xs-7 col-sm-8">
-          <label className="css-input switch switch-sm switch-success">
-            <input type="checkbox" id="register-terms" name="register-terms" /><span /> I agree with terms &amp; conditions
-          </label>
-        </div>
-        <div className="col-xs-5 col-sm-4">
-          <div className="font-s13 text-right push-5-t">
-            <a href="#" data-toggle="modal" data-target="#modal-terms">View Terms</a>
-          </div>
-        </div>
-      </div>
-      <div className="form-group">
         <p>{this.state.errorMessage}</p>
           <button className="btn btn-sm btn-block btn-success" type="submit">Create Account</button>
           <hr className="hr-text" data-content="OR" />

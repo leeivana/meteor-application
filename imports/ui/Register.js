@@ -3,7 +3,7 @@ import RegisterForm from './RegisterForm';
 
 const Register = () => {
   return ( 
-    <div className="bg-white pulldown">
+    <div>
       <div className="content content-boxed overflow-hidden">
         <div className="row">
           <div className="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">

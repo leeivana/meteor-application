@@ -24,7 +24,7 @@ class TeamEditScreen extends Component {
     });
     if(this.state.searchUser) {
       this.setState({
-        results: this.props.users.filter(user =>  {
+        results: this.props.allUsers.filter(user =>  {
           return user.username.toLowerCase().includes(this.state.searchUser.toLowerCase());
         })
       })
@@ -166,9 +166,9 @@ class TeamEditScreen extends Component {
 
 export default withTracker(() => {
   Meteor.subscribe('teams');
-
+  Meteor.subscribe('allUsers');
   return {
     teams: Teams.find({}).fetch(),
-    users: Meteor.users.find({}).fetch(),
+    allUsers: Meteor.users.find({}).fetch(),
   };
 })(TeamEditScreen);

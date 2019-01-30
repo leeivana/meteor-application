@@ -28,7 +28,7 @@ class Dashboard extends Component {
     return(
       <div>
         <main id="main-container">
-        <nav className="navbar navbar-default">
+          <nav className="navbar navbar-default">
               <div className="container-fluid">
                 <div className="navbar-header">
                 <a className="navbar-brand" href="#">
@@ -41,6 +41,12 @@ class Dashboard extends Component {
                   </ul>
               </div>
             </nav>
+            <div className="jumbotron">
+              <div className="container">
+              <h1>Hello, {Meteor.user().username}!</h1>
+                <p>...</p>
+              </div>
+            </div>
           {(!this.state.screen || this.state.screen === 'HomeScreen') ? 
             <div>
               <PersonalDetailScreen 

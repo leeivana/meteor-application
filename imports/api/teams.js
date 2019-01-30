@@ -8,6 +8,9 @@ if (Meteor.isServer) {
   Meteor.publish('teams',  teamsPublication = () => {
     return Teams.find();
   });
+  Meteor.publish('allUsers', userPublication = () => {
+    return Meteor.users.find({});
+  })
 }
 
 Meteor.methods({
