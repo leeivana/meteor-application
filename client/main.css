@@ -3,3 +3,7 @@ body {
   height: 100%;
   /* overflow-y: hidden; */
 }
+
+*:focus{
+  outline: 0;
+}

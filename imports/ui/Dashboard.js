@@ -32,7 +32,7 @@ class Dashboard extends Component {
               <div className="container-fluid">
                 <div className="navbar-header">
                 <a className="navbar-brand" href="#">
-                  <i className="fas fa-lemon"></i>
+                <i className="fab fa-connectdevelop fa-2x"></i>Team Interface
                 </a>
                   <p className="navbar-text">Signed in as {Meteor.user().username}</p>
                   </div>
@@ -44,7 +44,7 @@ class Dashboard extends Component {
             <div className="jumbotron">
               <div className="container">
               <h1>Hello, {Meteor.user().username}!</h1>
-                <p>...</p>
+                <p>Welcome to Team Interface, where Team Building is made Easy</p>
               </div>
             </div>
           {(!this.state.screen || this.state.screen === 'HomeScreen') ? 
