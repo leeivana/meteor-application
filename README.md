@@ -21,6 +21,11 @@ In order to use the application, the user must have an account. There are two me
 
 Once a user creates an account utilizing the two beforementioned methods, when accessing the application again, the user can use the login page and enter the previously implemented username and password. 
 
+Login Page:
+![Login Page](https://github.com/leeivana/meteor-application/blob/master/docs/Login-page.png?raw=true)
+Register Page:
+![Register Page](https://github.com/leeivana/meteor-application/blob/master/docs/Register-page.png?raw=true)
+
 Inside the application, which is created as a single-page application, there are three main components: user details, user teams and all teams. 
 
 ### User Details
