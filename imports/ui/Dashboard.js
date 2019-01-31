@@ -23,6 +23,7 @@ class Dashboard extends Component {
 
   navigateToPage = (type, screen) => {
     this.setState({[type]: screen});
+    console.log(Meteor.user());
   }
   render(){
     return(

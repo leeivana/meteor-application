@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import config from '../config'; 
+// import config from '../config'; 
 import '../imports/api/teams';
 
 Meteor.startup(() => {
@@ -9,8 +9,8 @@ Meteor.startup(() => {
 
   ServiceConfiguration.configurations.insert({
       service: "facebook",
-      appId: config.APP_ID,
-      secret: config.APP_SECRET,
+      appId: process.env.APP_ID,
+      secret: process.env.APP_SECRET,
   });
   Accounts.onCreateUser(function (options, user) {
     if (!user.services.facebook) {

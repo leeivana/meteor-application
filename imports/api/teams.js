@@ -25,7 +25,6 @@ Meteor.methods({
       teamMembers,
       createdAt: new Date(),
       owner: Meteor.userId(),
-      username: Meteor.user().username,
     })
   }
 });
