@@ -26,7 +26,7 @@ Inside the application, which is created as a single-page application, there are
 ### User Details
 The `user details` component is the first component on the screen and shows the user's first name, last name, and email address present in the database. By clicking the `Edit Personal Details` button on the top-right corner, the user will be able to change their personal information within the database (first name, last name, email address). The user profile is updated when the `Submit` button is clicked. 
 
-INSERT GIF? 
+![Personal Detail Edit Page](https://github.com/leeivana/meteor-application/blob/master/docs/Personal-Details.gif?raw=true)
 
 *Users who register through the registration page will not have a first, last name set up, but are able to input this information in the edit page*
 
