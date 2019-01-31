@@ -37,7 +37,7 @@ class LoginForm extends Component {
     <form className="js-validation-login form-horizontal push-30-t" onSubmit={this.handleSubmit}>
     <div className="form-group">
     <div className="col-xs-12">
-        <div className="form-material form-material-success">
+        <div className="form-material form-material-primary">
         <input className="form-control" type="text" name="loginUsername" />
         <label htmlFor="login-username">Username</label>
         </div>
@@ -45,7 +45,7 @@ class LoginForm extends Component {
     </div>
     <div className="form-group">
     <div className="col-xs-12">
-        <div className="form-material form-material-success">
+        <div className="form-material form-material-primary">
         <input className="form-control" type="password" name="loginPassword" />
         <label htmlFor="login-password">Password</label>
         </div>
