@@ -38,6 +38,8 @@ The `user details` component is the first component on the screen and shows the 
 ### User Teams
 The `user teams` component is the second component on the screen. This component shows all the teams that the user has created and/or the user is part of. The team data is presented on the webpage where the team name is on the left and a list of members is on the right. By clicking the `Create a Team` button on the top-right corner of the component, the user is able to create their own team. This component is composed of a form that contains two types of input: Team Name and Members. Through the search bar from Members, the user is able to search through all users in the database, by username, and are able to add them to their team. When the user completes the form, the team data is inserted into the database upon hitting the `Create Team` button. 
 
+![Create Team Page](https://github.com/leeivana/meteor-application/blob/master/docs/Create-teams.gif?raw=true)
+
 ### All Teams
 The `all teams` component is the last major component in the applciation. This component follows the same display structure as the `user teams` component. However, rather than only displaying teams associated to the current user, the component renders all the teams in the database. 
 
