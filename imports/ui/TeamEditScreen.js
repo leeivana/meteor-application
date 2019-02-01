@@ -147,7 +147,7 @@ class TeamEditScreen extends Component {
                           {this.state.errorMessage &&
                             <p style={{color: 'red'}}>{this.state.errorMessage}</p>
                           }
-                          <button onClick={this.handleSubmit} type="submit" className="create-team btn btn-primary">Create Team</button>
+                          <button onClick={this.handleSubmit} type="submit" className="create-team btn btn-default">Create Team</button>
                         </div>
                       </div>
                     </form>
