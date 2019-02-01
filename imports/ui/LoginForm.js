@@ -55,7 +55,7 @@ class LoginForm extends Component {
     <p>{this.state.errorMessage}</p>
         <button className="btn btn-sm btn-block btn-primary" type="submit">Log in</button>
         <hr className="hr-text" data-content="OR" />
-        <button onClick={this.loginWithFacebook} className="btn btn-block btn-primary push-10" type="button"><i className="fab fa-facebook pull-left"></i> Continue with Facebook</button>
+        <button onClick={this.loginWithFacebook} className="facebook btn btn-block btn-primary push-10" type="button"><i className="fab fa-facebook pull-left"></i> Continue with Facebook</button>
         <p>If you don't have an account, Register <a href="/register">here</a></p>
     </div>
     </form>
