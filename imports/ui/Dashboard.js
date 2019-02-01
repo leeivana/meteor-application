@@ -30,7 +30,7 @@ class Dashboard extends Component {
       <div>
         <main id="main-container">
           <nav className="navbar navbar-default">
-              <div className="container-fluid">
+              <div className="container-fluid animated zoomIn">
                 <div className="navbar-header">
                   <i className="navbar-brand fab fa-connectdevelop fa-2x"> <span> Team Interface</span></i> 
                   <p className="navbar-text">Signed in as {Meteor.user().username}</p>
@@ -41,7 +41,7 @@ class Dashboard extends Component {
               </div>
             </nav>
             <div className="jumbotron">
-              <div className="container">
+              <div className="container animated fadeInDown">
               <h1>Hello, {Meteor.user().username}!</h1>
                 <p>Welcome to Team Interface, where Team Building is made Easy</p>
               </div>
