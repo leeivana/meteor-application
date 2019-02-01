@@ -98,10 +98,10 @@ class TeamEditScreen extends Component {
               <div className="block-header bg-gray-lighter">
                 <ul className="block-options">
                   <li>
-                    <button onClick={() => {this.props.navigateToPage('teamScreen', 'display')}} type="button"><i className="far fa-eye"></i> DISPLAY TEAMS</button>
+                    <button className="change-content" onClick={() => {this.props.navigateToPage('teamScreen', 'display')}} type="button"><i className="far fa-eye"></i> DISPLAY TEAMS</button>
                   </li>
                 </ul>
-                <h3 className="block-title"><i className="fas fa-laugh-beam"></i> CREATE A TEAM</h3>
+                <h3 className="block-title"><i className="change-content fas fa-laugh-beam"></i> CREATE A TEAM</h3>
               </div>
               <div className="block-content">
                 <ul className="list list-timeline pull-t">                                        

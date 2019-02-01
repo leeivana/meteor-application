@@ -34,7 +34,7 @@ class EditScreen extends Component {
             <div className="block-header bg-gray-lighter">
               <ul className="block-options">
                 <li>
-                  <button onClick={() => {this.props.navigateToPage('screen', 'HomeScreen')}} type="button"><i className="far fa-user-circle"></i> BACK TO PROFILE</button>
+                  <button className="change-content" onClick={() => {this.props.navigateToPage('screen', 'HomeScreen')}} type="button"><i className="far fa-user-circle"></i> BACK TO PROFILE</button>
                 </li>
               </ul>
               <h3 className="block-title"><i className="fas fa-user-circle"></i> Personal Details</h3>

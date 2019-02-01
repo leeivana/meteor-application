@@ -14,10 +14,10 @@ class LoginForm extends Component {
         const password = event.target.loginPassword.value;
         Meteor.loginWithPassword({username: username}, password, error => {
             if(error) {
-                this.setState({errorMessage: error.reason});           
+                error.reason === 'Match failed' ? this.setState({errorMessage: 'Cannot leave any fields empty'}) : 
+                this.setState({errorMessage: error.reason});      
             } else {
                 FlowRouter.go('Dashboard');
-                console.log(Meteor.user())
             }
         });
     }
@@ -28,7 +28,6 @@ class LoginForm extends Component {
             console.log('Handle errors here: ', err);
         } else {
             FlowRouter.go('Dashboard');
-            console.log(Meteor.user());
         }
         });
     }
@@ -52,7 +51,7 @@ class LoginForm extends Component {
     </div>
     </div>
     <div className="form-group push-30-t">
-    <p>{this.state.errorMessage}</p>
+    <p className="error-message">{this.state.errorMessage}</p>
         <button className="btn btn-sm btn-block btn-primary" type="submit">Log in</button>
         <hr className="hr-text" data-content="OR" />
         <button onClick={this.loginWithFacebook} className="facebook btn btn-block btn-primary push-10" type="button"><i className="fab fa-facebook pull-left"></i> Continue with Facebook</button>

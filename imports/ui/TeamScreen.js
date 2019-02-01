@@ -25,7 +25,7 @@ const TeamScreen = props => {
       ))
     } else {
       return (
-        <div className="list-timeline-content">
+        <div className="list-timeline-content no-display">
         <p className="font-w600">No Teams to Display</p>
       </div>
       )
@@ -38,7 +38,7 @@ const TeamScreen = props => {
             <div className="block-header bg-gray-lighter">
               <ul className="block-options">
                 <li>
-                  <button onClick={() => {props.navigateToPage('teamScreen', 'EditTeam')}} type="button"><i className="far fa-plus-square"></i> CREATE A TEAM</button>
+                  <button className="change-content" onClick={() => {props.navigateToPage('teamScreen', 'EditTeam')}} type="button"><i className="far fa-plus-square"></i> CREATE A TEAM</button>
                 </li>
               </ul>
               <h3 className="block-title"><i className="fas fa-laugh-beam"></i> Your Teams</h3>

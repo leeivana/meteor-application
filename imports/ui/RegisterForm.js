@@ -34,13 +34,9 @@ class RegisterForm extends Component {
         password,
       }, error => {
         if(error) {
-          console.log(Meteor.userId());
-          console.log(Meteor.user());
-          console.log('reason', error.reason);
-          this.setState({errorMessage: error.reason})
+          this.setState({errorMessage: error.reason});
         } else {
           FlowRouter.go('Dashboard');
-          console.log(Meteor.user());
         }
       });
     }
@@ -52,7 +48,6 @@ class RegisterForm extends Component {
           console.log('Handle errors here: ', err);
       } else {
         FlowRouter.go('Dashboard');
-        console.log(Meteor.user());
       }
     });
   }
@@ -92,10 +87,10 @@ class RegisterForm extends Component {
         </div>
       </div>
       <div className="form-group">
-        <p>{this.state.errorMessage}</p>
+        <p className="error-message">{this.state.errorMessage}</p>
           <button className="btn btn-sm btn-block btn-success" type="submit">Create Account</button>
           <hr className="hr-text" data-content="OR" />
-          <button onClick={this.registerWithFacebook} className="btn btn-block btn-primary push-10" type="button"><i className="fab fa-facebook pull-left"></i> Continue with Facebook</button>
+          <button onClick={this.registerWithFacebook} className="facebook btn btn-block btn-primary push-10" type="button"><i className="fab fa-facebook pull-left"></i> Continue with Facebook</button>
           <p>Already have an account? Log in <a href="/">here</a></p>
       </div>
       </form>

@@ -29,7 +29,7 @@ const AllTeams = props => {
               <ul className="list list-timeline pull-t">                                        
                 {props.teams.length === 0 ? 
                 <li>
-                  <div className="list-timeline-content">
+                  <div className="list-timeline-content no-display">
                     <p className="font-w600">No Teams to Display</p>
                   </div>
                 </li>

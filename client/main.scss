@@ -2,8 +2,27 @@
 body {
   font-family: sans-serif;
   height: 100%;
+  .navbar-default {
+    // border-color: #34495e !important;
+    // background-color: #34495e; 
+  }
+  .change-content {
+    color: #2e3131 !important;
+  }
+  .navbar {
+    border-radius: 0px !important;
+  }
   .facebook {
     font-size: 12px;
+  }
+  .form-group{
+    .error-message{
+      color:#f03434;
+      text-align: left;
+    }
+  }
+  .no-display {
+    padding-bottom: 20px !important;
   }
 }
 
@@ -15,3 +34,4 @@ body {
   font-family: Montserrat !important;
   font-weight: 500;
 }
+
